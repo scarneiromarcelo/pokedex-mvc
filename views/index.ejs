@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <h1>Pokedex</h1>
+      <h1>POKEDEX</h1>
     </header>
     <main>
         <section id="cards">
@@ -25,7 +25,28 @@
                 </div>
             <% }) %>
         </section>
-    </main>
 
+        <section id="cadastro">
+          <h2>Cadastre um novo POKEMON</h2>
+
+          <form action="/add" method="post">
+            <label for="nome" class="label">Nome:</label>
+            <input type="text" id="nome" name="nome" class="text-input" autocomplete="off" placeholder="Digite o nome">
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descriçao" name="descricao" class="text-input" autocomplete="off" placeholder="Insira a descrição">
+
+            <label for="tipo" class="label">Tipo:</label>
+            <input type="text" id="tipo" name="tipo"
+            class="text-input" autocomplete="off" placeholder="Digite o tipo">
+
+            <label for="imagem" class="label">Link da Imagem</label>
+            <input type="text" id="imagem" name="imagem" class="text-input" autocomplete="off" placeholder="Insira o link da imagem">
+           
+            <button id="btnCadastrar" type="submit">Cadastrar</button>
+            
+          </form>
+        </section>      
+    </main>
   </body>
 </html>

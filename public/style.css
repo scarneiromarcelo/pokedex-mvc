@@ -8,11 +8,11 @@
 
 header {
   padding: 3rem;
-  background-color: red;
+  background-color: #d93636;
 }
 
 header h1 {
-  color: #fff;
+  color: #010440;
   font-size: 3rem;
   text-align: center;
 }
@@ -25,12 +25,14 @@ section#cards {
   display: flex;
   justify-content: space-evenly;
   margin-top: 5rem;
+  flex-wrap: wrap; /*Joga o item para baixo*/
 }
 
 section#cards div.card {
   width: 20rem;
   box-shadow: 5px 5px 5px 5px #00000015;
   padding: 3rem;
+  margin-top: 3rem;
 }
 
 section#cards div.card img {
@@ -39,8 +41,78 @@ section#cards div.card img {
 
 section#cards div.card h2 {
   margin-bottom: 1rem;
+  background-color: #d93636;
 }
 
 section#cards div.card p.descricao {
   margin-bottom: 1rem;
+}
+section#cadastro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  padding: 4rem;
+}
+
+section#cadastro h2 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #010440;
+}
+
+section#cadastro form {
+  width: 50%;
+}
+
+section#cadastro form input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  border: solid 2px rgb(163, 163, 163);
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+section#cadastro form label {
+  margin: 0.5rem;
+  color: rgb(160, 160, 160);
+}
+
+.label {
+  transition: all 0.2s;
+  z-index: 1;
+  color: #b3b3b3;
+  user-select: none;
+}
+
+.text-input {
+  background: #010440;
+  border: 2px;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s;
+  color: #fff;
+}
+
+/*btn*/
+section#cadastro form button {
+  padding: 0.8rem;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #fff;
+  border: solid 1px #010440;
+  color: #010440;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+section#cadastro form button:hover {
+  background-color: #010440;
+  color: #fff;
+  border-radius: 10px;
 }

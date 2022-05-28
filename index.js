@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path"); // Utilizando biblioteca "path" do express para acessar index.js e style.css
+const port = process.env.PORT || 3000;
 
 const app = express(); // Variável que está recebendo o express
 
@@ -16,14 +17,16 @@ const pokedex = [ //Criando os objetos da pokedex
     tipo: "Grass",
     imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
   },
+
   {
     id: 2,
-    nome: "CharmanderBulbasaur",
+    nome: "Bulbasaur",
     descricao:
       "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
     tipo: "Fire",
     imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
   },
+
   {
     id: 3,
     nome: "Squirtle",
@@ -32,6 +35,7 @@ const pokedex = [ //Criando os objetos da pokedex
     tipo: "Water",
     imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
   },
+  
 ];
 
 

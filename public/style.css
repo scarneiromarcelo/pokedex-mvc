@@ -12,38 +12,35 @@ header {
 }
 
 header h1 {
-    color: #fff;
-    font-size: 3rem;
-    text-align: center; 
-
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
 }
 
-main{
-    margin: 0 10rem 0 10rem;
+main {
+  margin: 0 10rem 0 10rem;
 }
 
-section#cards{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 5rem;
+section#cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5rem;
 }
 
 section#cards div.card {
-    width: 20rem;
-    box-shadow: 5px 5px 5px 5px #00000015;
-    padding: 3rem;
+  width: 20rem;
+  box-shadow: 5px 5px 5px 5px #00000015;
+  padding: 3rem;
 }
 
 section#cards div.card img {
-    width: 100%;
+  width: 100%;
 }
 
 section#cards div.card h2 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 section#cards div.card p.descricao {
-    margin-bottom: 1rem;
-
+  margin-bottom: 1rem;
 }
-

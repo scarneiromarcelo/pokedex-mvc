@@ -6,17 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <!--Referênciando o meu arquivo-->
-    <title>Pokedex-MVC</title>
+    <title>Pokédex-MVC</title>
   </head>
+
   <body>
+    <nav>
+      <ul>
+        <li><img src="/img/pokebola.png" alt="Pokebola" /></li>
+        <li>
+          <a href="/"><h1>Pokédex</h1></a>
+        </li>
+        <li><a href="#cadastro">Cadastrar</a></li>
+        <li><a href="#cards">Pokemons</a></li>
+      </ul>
+    </nav>
+
     <header>
-      <h1>POKEDEX</h1>
+      <img src="/img/DQGP_0uUQAAJ4oH.jpg" alt="banner" />
     </header>
+
     <main>
       <section id="cadastro">
+        <img src="/img/pokedex.png" alt="Pokedex" />
 
-        <img src="/img/pokedex.png" alt="Pokedex">
-        
         <% if (pokemon == undefined) { %>
         <h2>Cadastre um novo POKEMON</h2>
 
@@ -117,7 +129,6 @@
       </section>
 
       <section id="cards">
-
         <h2>Lista de Pokemons</h2>
 
         <% pokedex.forEach((pokemon) => { %>
@@ -128,12 +139,21 @@
           <h3><%= pokemon.nome %></h3>
           <p class="descricao"><%= pokemon.descricao %></p>
           <p>Tipo: <%= pokemon.tipo %></p>
-          <a href="/detalhes/<%= pokemon.id %>">Editar</a>
+          <a id="editar" href="/detalhes/<%= pokemon.id %>">Editar</a>
+          <a id="apagar" href="/delete/<%= pokemon.id %>">Apagar</a>
         </div>
         <% }) %>
       </section>
-
-      
     </main>
+
+    <footer>
+      <p>Todos os direitos reservados &copy;</p>
+      <p>
+        Dados retirados de
+        <a target="_blank" href="https://www.pokemon.com/br/pokedex/"
+          >https://www.pokemon.com/br/pokedex/</a
+        >
+      </p>
+    </footer>
   </body>
 </html>

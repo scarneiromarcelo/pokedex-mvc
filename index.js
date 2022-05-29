@@ -1,9 +1,11 @@
+require("dotenv").config
 const express = require("express");
 const req = require("express/lib/request");
 const path = require("path"); // Utilizando biblioteca "path" do express para acessar index.js e style.css
 
 const app = express(); // Variável que está recebendo o express
 
+const port = process.env.PORT || 3000
 // const port = process.env.PORT || 3000; // Config porta
 
 app.set("view engine", "ejs"); // Fala para o servidor que a view engine (motor que vai renderizar) é o ejs.
@@ -72,7 +74,6 @@ app.get("/detalhes/:id", (req, res) => {
   res.redirect("/#cadastro");
 });
 
-
 //Update do CRUD
 app.post("/update/:id", (req, res) => {
   const id = +req.params.id - 1;
@@ -84,16 +85,16 @@ app.post("/update/:id", (req, res) => {
 });
 
 app.get("/delete/:id", (req, res) => {
-  const id = +req.params.id -1;
+  const id = +req.params.id - 1;
 
-  delete pokedex[id]
+  delete pokedex[id];
 
   res.redirect("/#cards");
-})
+});
 
 app.listen(
-  3000,
+  port,
   () =>
     // porta em que o servidor está rodando
-    console.log("Servidor rodando em http://localhost:3000") // Mostrando o endereço HTTP no terminal
+    console.log(`Servidor rodando em ${port}`) // Mostrando o endereço HTTP no terminal
 );

@@ -4,17 +4,43 @@
   margin: 0;
   padding: 0;
   font-family: Roboto, Arial;
+  scroll-behavior: smooth;
 }
 
-header {
-  padding: 3rem;
-  background-color: #FF3D00;
+nav {
+  background-color: #0079a8;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 
-header h1 {
-  color: #010440;
-  font-size: 3rem;
-  text-align: center;
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 0.6rem;
+}
+
+nav img {
+  width: 3rem;
+}
+
+nav h1 {
+  color: #bbdefb;
+  font-size: 1.3rem;  
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #bbdefb;
+}
+
+header img {
+  width: 100%;
+  height: 30rem;
 }
 
 main {
@@ -38,7 +64,7 @@ section#cards div.card {
 section#cards h2 {
   width: 100%;
   text-align: center;
- 
+  background-color: #aeea00;
 }
 
 section#cards div.card img {
@@ -47,33 +73,55 @@ section#cards div.card img {
 
 section#cards div.card h3 {
   margin-bottom: 1rem;
-  background-color: #FF3D00;
+  background-color: #ff3d00;
 }
 
 section#cards div.card p.descricao {
   margin-bottom: 1rem;
 }
 
-section#cards div.card a {
-  padding: .5rem;
-  width: 15%;
+section#cards div.card a#editar {
+  padding: 0.5rem;
+
   display: flex;
   justify-content: center;
   margin: 0 auto;
   background-color: #fff;
-  border: solid 1px #FF3D00;
-  color: #FF3D00;
+  border: solid 1px #ff3d00;
+  color: #ff3d00;
   cursor: pointer;
   /* border-radius: 5px; */
   transition: 0.2s ease-in-out;
   text-decoration: none;
   margin-top: 2rem;
-  font-size: 1rem;  
+  font-size: 1rem;
 }
 
-section#cards div.card a:hover {
-  background-color:#FF3D00;
-  ;
+section#cards div.card a#editar:hover {
+  background-color: #ff3d00;
+  color: #fff;
+  /* border-radius: 10px; */
+}
+
+section#cards div.card a#apagar {
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #fff;
+  border: solid 1px #2b2b2b;
+  color: #2b2b2b;
+  cursor: pointer;
+  /* border-radius: 5px; */
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+section#cards div.card a#apagar:hover {
+  background-color: #2b2b2b;
   color: #fff;
   /* border-radius: 10px; */
 }
@@ -86,11 +134,16 @@ section#cadastro {
   padding: 4rem;
 }
 
+section#cadastro img {
+  width: 50%;
+}
+
 section#cadastro h2 {
   width: 100%;
   text-align: center;
   padding-bottom: 1rem;
-  color: #37474F;
+  color: #37474f;
+  
 }
 
 section#cadastro form {
@@ -119,7 +172,7 @@ section#cadastro form label {
 }
 
 .text-input {
-  background: #37474F;
+  background: #37474f;
   border: 2px;
   border-radius: 5px;
   outline: none;
@@ -134,8 +187,8 @@ section#cadastro form button {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  background-color: #AEEA00;
-  border: solid 1px #AEEA00;
+  background-color: #aeea00;
+  border: solid 1px #aeea00;
   color: #fff;
   cursor: pointer;
   border-radius: 5px;
@@ -145,6 +198,29 @@ section#cadastro form button {
 
 section#cadastro form button:hover {
   background-color: #fff;
-  color: #AEEA00;
+  color: #aeea00;
   border-radius: 10px;
+}
+
+footer {
+  width: 100%;
+  background-color: #0079a8;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer p {
+  width: 100%;
+  color: #bbdefb;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+footer p a {
+  text-decoration: none;
+  color: #bbdefb;
+  font-weight: 600;
 }

@@ -1,18 +1,23 @@
-require("dotenv").config
+require("dotenv").config;
 const express = require("express");
 const req = require("express/lib/request");
-const path = require("path"); // Utilizando biblioteca "path" do express para acessar index.js e style.css
+const path = require("path");
+// Utilizando biblioteca "path" do express para acessar index.js e style.css
 
-const app = express(); // Variável que está recebendo o express
+const app = express();
+// Variável que está recebendo o express
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 // const port = process.env.PORT || 3000; // Config porta
 
-app.set("view engine", "ejs"); // Fala para o servidor que a view engine (motor que vai renderizar) é o ejs.
+app.set("view engine", "ejs");
+// Fala para o servidor que a view engine (motor que vai renderizar) é o ejs.
 
-app.use(express.static(path.join(__dirname, "public"))); // Arquivos estáticos (index.js e style.css).
+app.use(express.static(path.join(__dirname, "public")));
+// Arquivos estáticos (index.js e style.css).
 
-app.use(express.urlencoded()); //Cliente envia info do input através de JSON. e URLENCODED recebe
+app.use(express.urlencoded());
+//Cliente envia info do input através de JSON. e URLENCODED recebe
 
 const pokedex = [
   //Criando os objetos da pokedex
@@ -57,7 +62,8 @@ let pokemon = undefined;
 //Read do CRUD
 app.get("/", (req, res) => {
   //Acessando a rota "/"
-  res.render("index", { pokedex, pokemon }); // Já temos a renderização configurada e estamos enviando a nossa const "pokedex" como JSON.
+  res.render("index", { pokedex, pokemon });
+  // Já temos a renderização configurada e estamos enviando a nossa const "pokedex" como JSON.
 });
 
 //Create do CRUD
@@ -92,9 +98,7 @@ app.get("/delete/:id", (req, res) => {
   res.redirect("/#cards");
 });
 
-app.listen(
-  port,
-  () =>
-    // porta em que o servidor está rodando
-    console.log(`Servidor rodando em ${port}`) // Mostrando o endereço HTTP no terminal
+app.listen(port, () =>
+  // Porta em que o servidor está rodando
+  console.log(`Servidor rodando em ${port}`)
 );

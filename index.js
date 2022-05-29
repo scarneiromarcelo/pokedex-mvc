@@ -1,4 +1,5 @@
 const express = require("express");
+const req = require("express/lib/request");
 const path = require("path"); // Utilizando biblioteca "path" do express para acessar index.js e style.css
 
 const app = express(); // Variável que está recebendo o express
@@ -62,14 +63,15 @@ app.post("/create", (req, res) => {
   const pokemon = req.body;
   pokemon.id = pokedex.length + 1;
   pokedex.push(pokemon);
-  res.redirect("/"); //Recarrega a página
+  res.redirect("/#cards"); //Recarrega a página
 });
 
 app.get("/detalhes/:id", (req, res) => {
   const id = +req.params.id;
   pokemon = pokedex.find((pokemon) => pokemon.id === id);
-  res.redirect("/");
+  res.redirect("/#cadastro");
 });
+
 
 //Update do CRUD
 app.post("/update/:id", (req, res) => {
@@ -78,8 +80,16 @@ app.post("/update/:id", (req, res) => {
   newPokemon.id = id + 1;
   pokedex[id] = newPokemon;
   pokemon = undefined;
-  res.redirect("/");
+  res.redirect("/#cards");
 });
+
+app.get("/delete/:id", (req, res) => {
+  const id = +req.params.id -1;
+
+  delete pokedex[id]
+
+  res.redirect("/#cards");
+})
 
 app.listen(
   3000,

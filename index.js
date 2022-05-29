@@ -49,18 +49,36 @@ const pokedex = [
   },
 ];
 
+let pokemon = undefined;
 //Rotas
+//Read do CRUD
 app.get("/", (req, res) => {
   //Acessando a rota "/"
-  res.render("index", { pokedex }); // Já temos a renderização configurada e estamos enviando a nossa const "pokedex" como JSON.
+  res.render("index", { pokedex, pokemon }); // Já temos a renderização configurada e estamos enviando a nossa const "pokedex" como JSON.
 });
 
-app.post("/add", (req, res) => {
+//Create do CRUD
+app.post("/create", (req, res) => {
   const pokemon = req.body;
-
+  pokemon.id = pokedex.length + 1;
   pokedex.push(pokemon);
-
   res.redirect("/"); //Recarrega a página
+});
+
+app.get("/detalhes/:id", (req, res) => {
+  const id = +req.params.id;
+  pokemon = pokedex.find((pokemon) => pokemon.id === id);
+  res.redirect("/");
+});
+
+//Update do CRUD
+app.post("/update/:id", (req, res) => {
+  const id = +req.params.id - 1;
+  const newPokemon = req.body;
+  newPokemon.id = id + 1;
+  pokedex[id] = newPokemon;
+  pokemon = undefined;
+  res.redirect("/");
 });
 
 app.listen(

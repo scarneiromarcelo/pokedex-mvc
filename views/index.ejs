@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <!--Referênciando o meu arquivo-->
     <title>Pokédex-MVC</title>
   </head>
@@ -21,6 +21,13 @@
       </ul>
     </nav>
 
+    <% if(message != ""){ %>
+    <section id="message">
+      <p><%=message%></p>
+      <span id="close">&times;</span>
+    </section>
+    <% } %>
+
     <header>
       <img src="/img/banner2.jpg" alt="banner" />
     </header>
@@ -30,7 +37,7 @@
         <img src="/img/pokedex.png" alt="Pokedex" />
 
         <% if (pokemon == undefined) { %>
-        <h2>Cadastre um novo POKEMON</h2>
+        <h2>Cadastre um novo Pokemon</h2>
 
         <form action="/create" method="post">
           <label for="nome" class="label">Nome:</label>
@@ -155,5 +162,7 @@
         >
       </p>
     </footer>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>

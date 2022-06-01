@@ -7,11 +7,28 @@
   scroll-behavior: smooth;
 }
 
+section#message {
+  position: absolute;
+  top: 7rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+  padding: 1.2rem;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: #ff3d00;
+  color: #2b2b2b;
+  cursor: pointer;
+  position: fixed;
+}
+
 nav {
   background-color: #3661ac;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  z-index: 999;
+  z-index: 998;
   /* position: relative; */
 }
 
@@ -25,8 +42,9 @@ nav ul li {
   padding: 0.6rem;
 }
 
-nav img {
-  width: 3rem;
+nav ul li a {
+  text-decoration: none;
+  color: #bbdefb;
 }
 
 nav h1 {
@@ -34,9 +52,8 @@ nav h1 {
   font-size: 1.3rem;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #bbdefb;
+nav img {
+  width: 3rem;
 }
 
 header img {
@@ -54,6 +71,7 @@ section#cards {
   justify-content: space-evenly;
   margin-top: 5rem;
   flex-wrap: wrap; /*Joga o item para baixo*/
+  width: 100%;
 }
 
 section#cards div.card {
@@ -133,7 +151,8 @@ section#cadastro {
   justify-content: center;
   flex-wrap: wrap;
 
-  padding: 4rem;
+  /* padding: 4rem; */
+  width: 100%;
 }
 
 section#cadastro img {
@@ -157,12 +176,12 @@ section#cadastro form input {
   font-size: 1rem;
   outline: none;
   border: solid 2px rgb(163, 163, 163);
-  margin: 0 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 section#cadastro form label {
-  margin: 0.5rem;
   color: rgb(160, 160, 160);
+  text-align: center;
 }
 
 .label {
@@ -228,18 +247,23 @@ footer p a {
 }
 
 @media (max-width: 480px) {
+  /*IphoneSE*/
   header img {
     width: 100%;
     height: 50%;
-    margin-top: 4rem;
   }
 
-  section#cards div.card img {
+  section#message {
     width: 50%;
+    font-size: 0.8rem;
   }
 
   main {
-    margin: 0.1rem 0.1rem 0.1rem 0.1rem;
+    margin: 0 auto;
+  }
+
+  section#cadastro {
+    width: 100%;
   }
 
   section#cadastro img {
@@ -251,27 +275,15 @@ footer p a {
     text-align: center;
     padding-bottom: 1rem;
     color: #37474f;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   section#cadastro form {
-    width: 100%;
+    margin: 0;
   }
 
   section#cadastro form button {
-    padding: 0.8rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-left: 1.1rem;
-    /* margin: 0 auto; */
-    background-color: #aeea00;
-    border: solid 1px #aeea00;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.2s ease-in-out;
-    margin-top: 1rem;
+    width: 50%;
   }
 
   section#cards h2 {
@@ -279,11 +291,16 @@ footer p a {
     font-size: 1.5rem;
     text-align: center;
     background-color: white;
+    margin-bottom: 2rem;
   }
 
   section#cards {
     align-items: center;
-    width: 100%;
+  }
+
+  section#cards div.card {
+    margin: 0.5rem 0 0.5rem 0;
+    width: 50%;
   }
 
   footer p {
@@ -298,13 +315,81 @@ footer p a {
   }
 }
 
-@media screen and (min-width: 481px) and (max-width: 900px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   header img {
     width: 100%;
     height: 50%;
-    margin-top: 3.5rem;
+  }
+  .message {
+    width: 100%;
   }
 
+  main {
+    margin: 0.1rem 0.1rem 0.1rem 0.1rem;
+  }
+
+  section#cadastro {
+    width: 100%;
+  }
+
+  section#cadastro img {
+    display: none;
+  }
+
+  section#cadastro h2 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+    color: #37474f;
+    font-size: 1.5rem;
+  }
+
+  section#cadastro form {
+    width: 80%;
+  }
+
+  section#cadastro form button {
+    width: 50%;
+  }
+
+  section#cards h2 {
+    /* width: 100%; */
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 2rem;
+  }
+
+  section#cards {
+    /* width: 20rem; */
+  }
+
+  section#cards div.card {
+    margin: 0.5rem 0 0.5rem 0;
+    width: 50%;
+  }
+
+  footer p {
+    width: 100%;
+    color: #bbdefb;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  footer {
+    height: 3rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  header img {
+    width: 100%;
+    height: 50%;
+  }
+
+  .message {
+    width: 100%;
+  }
   main {
     margin: 0.1rem 0.1rem 0.1rem 0.1rem;
   }
@@ -318,45 +403,33 @@ footer p a {
     text-align: center;
     padding-bottom: 1rem;
     color: #37474f;
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   section#cadastro form {
-    width: 100%;
+    width: 80%;
   }
 
   section#cadastro form button {
-    padding: 0.8rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-left: 1.1rem;
-    /* margin: 0 auto; */
-    background-color: #aeea00;
-    border: solid 1px #aeea00;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.2s ease-in-out;
-    margin-top: 1rem;
+    width: 50%;
   }
 
   section#cards h2 {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     background-color: white;
   }
 
   section#cards {
-    width: 20rem;
+    justify-content: center;
   }
 
   footer p {
     width: 100%;
     color: #bbdefb;
     text-align: center;
-    font-size: 10px;
+    font-size: 20px;
   }
 
   footer {
